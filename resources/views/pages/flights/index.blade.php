@@ -78,7 +78,9 @@
                     <th scope="col">Price</th>
                     <th scope="col">Available Seats</th>
                     <th scope="col">Booking</th>
-                    <th scope="col">Actions</th>
+                    @if (Auth::user())
+                        <th scope="col">Actions</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -131,7 +133,7 @@
                                 </div>
                             </div>
                         </td>
-
+                        @if (Auth::user())
                         <td>
                             <a href="{{ url('flights/' . $flight->id . '/edit/') }}" class="btn btn-warning">Edit</a>
                             <form action="{{ url('flights/' . $flight->id) }}" method="POST" class="d-inline">
@@ -140,6 +142,7 @@
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                 @endforeach
             </tbody>
