@@ -18,10 +18,10 @@ Route::group(['middleware' => ['auth']], function () {
     //Flights
     Route::resource('/flights', FlightController::class);
     Route::get('/api/getCitiesByCountry/{country}', [CitiesController::class, 'getCitiesByCountry']);
-    Route::get('/flight/search', [FlightController::class, 'search']);
-
+    
     //Tickets
     Route::resource('/tickets', TicketController::class);
 });
+Route::get('/flight/search', [FlightController::class, 'search']);
 Route::get('/', [FlightController::class, 'index'])->name('home');
 
