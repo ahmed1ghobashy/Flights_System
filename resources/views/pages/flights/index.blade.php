@@ -93,11 +93,11 @@
                         <td>
                             <input type="hidden" name="flight_id" value="{{ $flight->id }}">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                                data-bs-target="{{ '#modal' . $flight->id }}">
                                 Book
                             </button>
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            <div class="modal fade" id="{{ 'modal' . $flight->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
